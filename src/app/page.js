@@ -4,7 +4,9 @@ import Portada from "./components/Portada.js";
 export default function Home() {
   return (
     <>
-      <Navegador /> <Portada />
+      <Navegador />
+
+      <Portada />
     </>
   );
 }

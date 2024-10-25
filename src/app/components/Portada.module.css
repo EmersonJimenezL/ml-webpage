@@ -1,0 +1,19 @@
+.divprin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("/portada-4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title {
+  font-size: 100px;
+  color: white;
+}
+
+.subtitle {
+  font-size: 50px;
+  color: white;
+}
