@@ -6,8 +6,8 @@ export default function Portada() {
   return (
     <div className={styles.divprin}>
       <div>
-        <h1 className={styles.title}>Maria leonarda</h1>
-        <p className={styles.subtitle}>Costureria</p>
+        <h1 className={styles.title}>María Leonarda</h1>
+        <h2 className={styles.subtitle}>Diseño y confección</h2>
       </div>
     </div>
   );

@@ -9,11 +9,23 @@
 }
 
 .title {
+  font-family: "Tinos";
+  font-weight: bold;
   font-size: 100px;
   color: white;
 }
 
 .subtitle {
+  font-family: "tinos";
   font-size: 50px;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 50px;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
 }

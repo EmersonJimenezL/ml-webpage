@@ -19,9 +19,9 @@ import Button from "@mui/material/Button";
 import style from "./Navegador.module.css";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Inicio", "Trabajos", "Contacto"];
 
-function DrawerAppBar(props) {
+function Navegador(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -32,7 +32,7 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        <img src="./logo.jpeg" className={style.logo} />
       </Typography>
       <Divider />
       <List>
@@ -69,7 +69,8 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            {/*  Imagen para el logo del navegador */}
+            <img src="./logo.jpeg" className={style.logo} />
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
@@ -104,8 +105,8 @@ function DrawerAppBar(props) {
   );
 }
 
-DrawerAppBar.propTypes = {
+Navegador.propTypes = {
   window: PropTypes.func,
 };
 
-export default DrawerAppBar;
+export default Navegador;
