@@ -6,16 +6,16 @@ import style from "./Galeria.module.css";
 
 export default function Galeria() {
   return (
-    <Box sx={{ overflowY: "scroll" }}>
-      <ImageList variant="masonry" cols={3} gap={8}>
+    <Box sx={{ overflow: "hidden" }}>
+      <ImageList variant="masonry" cols={3} gap={4} className={style.imageList}>
         {itemData.map((item) => (
-          <ImageListItem key={item.img}>
+          <ImageListItem key={item.img} className={style.imageListItem}>
             <img
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.img}?w=248&fit=crop&auto=format`}
               alt={item.title}
               loading="lazy"
-              className={style.galeria}
+              className={style.galeriaImg}
             />
           </ImageListItem>
         ))}

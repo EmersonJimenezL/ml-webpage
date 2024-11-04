@@ -1,3 +1,21 @@
-.galeria:hover {
-  transition: scale(1.2);
+.imageList {
+  max-width: 100%; /* Limita el ancho total del contenedor */
+}
+
+.imageListItem {
+  overflow: hidden; /* Evita que las imágenes desborden su contenedor */
+  position: relative; /* Necesario para que z-index funcione en las imágenes */
+}
+
+.galeriaImg {
+  position: relative;
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* Transición suave para el escalado y z-index */
+}
+
+.galeriaImg:hover {
+  transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el cursor */
+  z-index: 1; /* Coloca la imagen en el frente para que se superponga */
 }

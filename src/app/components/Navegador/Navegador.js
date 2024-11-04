@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -15,11 +14,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Link from "next/link"; // Importar Link de next/link
 
 import style from "./Navegador.module.css";
 
 const drawerWidth = 240;
-const navItems = ["Inicio", "Trabajos", "Contacto"];
+const navItems = ["Trabajos", "Contacto"];
 
 function Navegador(props) {
   const { window } = props;
@@ -39,7 +39,9 @@ function Navegador(props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <Link href={`#${item.toLowerCase()}`} passHref>
+                <ListItemText primary={item} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -53,7 +55,14 @@ function Navegador(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar className={style.bg_color} component="nav">
+      <AppBar
+        className={style.bg_color}
+        sx={{
+          background: "#b9a197",
+          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.6)",
+        }}
+        component="nav"
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -69,14 +78,13 @@ function Navegador(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            {/*  Imagen para el logo del navegador */}
             <img src="./logo.jpeg" className={style.logo} />
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
+              <Link key={item} href={`#${item.toLowerCase()}`} passHref>
+                <Button sx={{ color: "#fff" }}>{item}</Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
@@ -88,7 +96,7 @@ function Navegador(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
