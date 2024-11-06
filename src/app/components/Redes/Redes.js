@@ -7,9 +7,21 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 const actions = [
-  { icon: <WhatsAppIcon />, name: "WhatsApp" },
-  { icon: <InstagramIcon />, name: "Instagram" },
+  {
+    icon: <WhatsAppIcon />,
+    name: "WhatsApp",
+    url: "https://wa.me/56950728867/?text=¡Hola!, realiza tu consulta!!",
+  },
+  {
+    icon: <InstagramIcon />,
+    name: "Instagram",
+    url: "https://www.instagram.com/marileo.mn/?utm_source=ig_web_button_share_sheet",
+  },
 ];
+
+const redirect = (url) => {
+  window.open(url, "_blank");
+};
 
 export default function Redes() {
   return (
@@ -34,6 +46,9 @@ export default function Redes() {
           icon={action.icon}
           tooltipTitle={action.name}
           sx={{ background: "#b9a197" }}
+          onClick={() => {
+            redirect(action.url);
+          }}
         />
       ))}
     </SpeedDial>
